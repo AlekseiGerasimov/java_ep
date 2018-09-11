@@ -1,35 +1,43 @@
 package ActionHandler;
 
+import Interfaces.ActionsForHandlers;
 import Objects.LoadFile;
-import Objects.Reports;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class LoadFileHandler {
+/**
+ * Класс обрабатывает действия пользователя по загрузке данных из файла в базу данных
+ * Класс работает с пунктом меню "Загрузка данных из файла в базу данных"
+ */
+public class LoadFileHandler implements ActionsForHandlers {
     private LoadFile file;
 
     public LoadFileHandler(){
         file = new LoadFile();
     }
+
     public void action(){
         int input_value;
         Scanner scanner;
         do {
-            input_value = listProjectAction();
+            input_value = listActions();
             switch (input_value){
                 case 1 :
-                    System.out.println("Введите название файла с проектами");
+                    System.out.println("Просьба обратить внимание, что файл должен располагаться в директории \"Files\".");
+                    System.out.println("Введите название файла с проектами. Формат данных в файле должен соответствовать следующему виду: Проект - Описание проекта");
                     scanner = new Scanner(System.in);
                     file.loadProjects(scanner.nextLine());
                     break;
                 case 2 :
-                    System.out.println("Введите название файла с пользователями");
+                    System.out.println("Просьба обратить внимание, что файл должен располагаться в директории \"Files\".");
+                    System.out.println("Введите название файла с пользователями. Формат данных в файле должен соответствовать следующему виду: Имя пользователя");
                     scanner = new Scanner(System.in);
                     file.loadUsers(scanner.nextLine());
                     break;
                 case 3 :
-                    System.out.println("Введите название файла с дефектами");
+                    System.out.println("Просьба обратить внимание, что файл должен располагаться в директории \"Files\".");
+                    System.out.println("Введите название файла с дефектами. Формат данных в файле должен соответствовать следующему виду: Имя проекта - Имя пользователя - Описание дефекта");
                     scanner = new Scanner(System.in);
                     file.loadIssue(scanner.nextLine());
                     break;
@@ -38,7 +46,8 @@ public class LoadFileHandler {
         }while (input_value != 4);
         new MainConsoleWindow().action();
     }
-    public int listProjectAction(){
+
+    public int listActions(){
         System.out.println("------------------------------------------------------------------------------------------");
         System.out.println("1. Загрузить файл проектов");
         System.out.println("2. Загрузить файл пользователей");

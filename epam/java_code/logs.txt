@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-04T18:09:12</date>
+  <millis>1536073752191</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>Common.CommonFunctions</class>
+  <method> Map&lt;Integer,String&gt; getListProjects()</method>
+  <thread>1</thread>
+  <message>При выполнении запроса: select * from project1 возникла ошибка. Проверьте корректность запроса или корректность базы данных для которой происходит подключение</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-04T18:09:22</date>
+  <millis>1536073762917</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>Common.CommonFunctions</class>
+  <method> Map&lt;Integer,String&gt; getListUsers()</method>
+  <thread>1</thread>
+  <message>При выполнении запроса: select * from users1 возникла ошибка. Проверьте корректность запроса или корректность базы данных для которой происходит подключение</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-04T18:09:33</date>
+  <millis>1536073773078</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>Common.CommonFunctions</class>
+  <method> Map&lt;Integer,String&gt; getListUsers()</method>
+  <thread>1</thread>
+  <message>При выполнении запроса: select * from users1 возникла ошибка. Проверьте корректность запроса или корректность базы данных для которой происходит подключение</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-04T18:13:40</date>
+  <millis>1536074020334</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: jdbc:sqlite:sqlite1/bug_tracker_system.db невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:09:33</date>
+  <millis>1536142173219</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:10:58</date>
+  <millis>1536142258914</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:13:55</date>
+  <millis>1536142435556</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:14:05</date>
+  <millis>1536142445178</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:14:52</date>
+  <millis>1536142492507</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:15:40</date>
+  <millis>1536142540989</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:15:49</date>
+  <millis>1536142549220</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:15:58</date>
+  <millis>1536142558461</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:16:22</date>
+  <millis>1536142582918</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:16:32</date>
+  <millis>1536142592835</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:19:02</date>
+  <millis>1536142742853</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:19:34</date>
+  <millis>1536142774916</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:20:01</date>
+  <millis>1536142801844</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:20:11</date>
+  <millis>1536142811364</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:20:19</date>
+  <millis>1536142819124</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:21:58</date>
+  <millis>1536142918636</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:24:22</date>
+  <millis>1536143062037</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:24:36</date>
+  <millis>1536143076387</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:25:35</date>
+  <millis>1536143135732</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T13:28:14</date>
+  <millis>1536143294261</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>JDBC.ConnectionDB</class>
+  <method>Connection getConnection()</method>
+  <thread>1</thread>
+  <message>При текущем url: null невозможно подключиться к БД</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2018-09-05T19:56:07</date>
+  <millis>1536166567934</millis>
+  <sequence>0</sequence>
+  <logger>MyLogger</logger>
+  <level>WARNING</level>
+  <class>Objects.User</class>
+  <method>updateUser(String currentName, String newName)</method>
+  <thread>1</thread>
+  <message>При выполнении запроса: insert into users(user_name) values('Рома' возникла ошибка. Проверьте корректность запроса или корректность базы данных для которой происходит подключение</message>
+</record>
+</log>

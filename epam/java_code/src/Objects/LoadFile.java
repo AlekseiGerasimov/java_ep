@@ -1,52 +1,48 @@
 package Objects;
 
-import Interfaces.IIssues;
+import Common.MyLogger;
 import Interfaces.ILoadFile;
-import JDBC.ConnectionDB;
 
 import java.io.*;
-import java.sql.*;
-import java.util.*;
+import java.util.logging.Level;
 
 public class LoadFile implements ILoadFile{
+    public LoadFile(){
+    }
 
     @Override
     public void loadProjects(String fileName) {
-        Map<String,String> fileProjects = new HashMap<>();
+        Project project = new Project();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader( new FileInputStream("Files/".concat(fileName)) , "CP1251"));
             while(reader.ready()){
                 String []str = reader.readLine().split("-",2);
-                fileProjects.put(str[0],str[1]);
+                project.addProject(str[0].trim(),str[1].trim());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadProjects(String fileName)","Файл не найден, просьба проверить корректность пути до файла");
+            System.exit(-1);
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Project project = new Project();
-        for(Map.Entry<String,String> entry : fileProjects.entrySet()){
-            project.addProject(entry.getKey(),entry.getValue());
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadProjects(String fileName)","Прочитать файл невозможно. Проверить права доступа до файла и открытость файла в транзакционном режиме");
+            System.exit(-1);
         }
     }
 
     @Override
     public void loadUsers(String fileName) {
-        List<String> fileProjects = new ArrayList<>();
+        User user = new User();
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader( new FileInputStream("Files/".concat(fileName)) , "CP1251"));
             while(reader.ready()){
                 String str = reader.readLine();
-                fileProjects.add(str);
+                user.addUser(str.trim());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadUsers(String fileName)","Файл не найден, просьба проверить корректность пути до файла");
+            System.exit(-1);
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-        User user = new User();
-        for(String str : fileProjects){
-            user.addUser(str);
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadUsers(String fileName)","Прочитать файл невозможно. Проверить права доступа до файла и открытость файла в транзакционном режиме");
+            System.exit(-1);
         }
     }
 
@@ -60,9 +56,11 @@ public class LoadFile implements ILoadFile{
                 issue.addIssue(str[0].trim(),str[1].trim(),str[2].trim());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadIssue(String fileName)","Файл не найден, просьба проверить корректность пути до файла");
+            System.exit(-1);
         } catch (IOException e) {
-            e.printStackTrace();
+            MyLogger.log(Level.WARNING,LoadFile.class.getName(),"loadIssue(String fileName)","Прочитать файл невозможно. Проверить права доступа до файла и открытость файла в транзакционном режиме");
+            System.exit(-1);
         }
     }
 }
