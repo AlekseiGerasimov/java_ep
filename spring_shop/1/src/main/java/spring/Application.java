@@ -1,14 +1,18 @@
 package spring;
 
+import objects.Car;
 import objects.Product;
 import objects.ProductsToUsers;
 import objects.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,14 +25,13 @@ import java.util.Map;
 @RestController
 public class Application {
 
-    private SessionFactory factory = new Configuration().configure().buildSessionFactory();
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @RequestMapping("/user")
     public List<String> user() {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         List<String> resultList = new ArrayList<>();
         try(Session session = factory.openSession()){
             session.beginTransaction();
@@ -41,11 +44,15 @@ public class Application {
         catch(HibernateException ex){
             ex.printStackTrace();
         }
+        finally {
+            factory.close();
+        }
         return resultList;
     }
 
     @RequestMapping("/product")
     public List<String> product() {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         List<String> resultList = new ArrayList<>();
         try(Session session = factory.openSession()){
             session.beginTransaction();
@@ -58,11 +65,15 @@ public class Application {
         catch(HibernateException ex){
             ex.printStackTrace();
         }
+        finally {
+            factory.close();
+        }
         return resultList;
     }
 
     @RequestMapping("/orders")
     public List<String> orders() {
+        SessionFactory factory = new Configuration().configure().buildSessionFactory();
         Map<String,List<Product>> userProductMap = new HashMap<>();
         List<String> resultList = new ArrayList<>();
         try(Session session = factory.openSession()){
@@ -87,6 +98,54 @@ public class Application {
         catch(HibernateException ex){
             ex.printStackTrace();
         }
+        finally {
+            factory.close();
+        }
         return resultList;
     }
+
+    @RequestMapping("/test")
+    public List<String> listCar() {
+        List<String> resultSet = new ArrayList<>();
+        SessionFactory factory = new Configuration().configure("other/hibernate.cfg.test.xml").buildSessionFactory();
+
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            List<Car> cars = (List<Car>)session.createQuery("from Car").list();
+            for(Car car : cars)
+                resultSet.add(car.getId() + " " + car.getModel() + " " + car.getColor() + " " +
+                        car.getModelType() + " " + car.getCost());
+            session.getTransaction().commit();
+        }
+        catch(HibernateException ex){
+            ex.printStackTrace();
+        }
+        finally {
+            factory.close();
+        }
+        return resultSet;
+    }
+
+
+    @RequestMapping("/test-list")
+    public String addCar() {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("other/context.xml");
+        Car car = (Car)context.getBean("Car");
+        System.out.println(car.getColor());
+        SessionFactory factory = new Configuration().configure("other/hibernate.cfg.test.xml").buildSessionFactory();
+        try(Session session = factory.openSession()){
+            Transaction tr = session.beginTransaction();
+            session.save(car);
+            tr.commit();
+        }
+        catch(HibernateException ex){
+            ex.printStackTrace();
+        }
+        finally {
+            factory.close();
+        }
+        return "Модель добавлена";
+    }
+
 }
