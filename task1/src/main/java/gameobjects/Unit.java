@@ -1,7 +1,8 @@
-package objects;
+package gameobjects;
 
-import baseobjects.Field;
-import baseobjects.Orientation;
+import baseobjects.HorseStep;
+import baseobjects.SimpleStep;
+import enums.Orientation;
 import baseobjects.Position;
 import interfaces.Action;
 import orientation.*;
@@ -12,14 +13,16 @@ import java.util.Map;
 public abstract class Unit implements Action {
     protected Position position;
     protected Orientation orientation;
+    protected SimpleStep simpleStep;
+    protected HorseStep horseStep;
     private Map<Orientation, BaseOrientation> orientationMap;
     public Unit(){
-        position = new Position(0,0);
+        position = new Position();
         orientation = Orientation.NORTH;
+        simpleStep = new SimpleStep();
+        horseStep = new HorseStep();
         fillMap();
     }
-
-    /* ---------------------------------------------------------------------------------------- */
 
     private void fillMap(){
         orientationMap = new HashMap<>(4);
@@ -29,18 +32,13 @@ public abstract class Unit implements Action {
         orientationMap.put(Orientation.WEST,new WestOrientation());
     }
 
-    /* ---------------------------------------------------------------------------------------- */
-
     public void turnClockwise() {
         orientationMap.get(orientation).changeOrientation(this);
     }
 
-
     public void move(){
         orientationMap.get(orientation).move(this);
     }
-
-    /* ---------------------------------------------------------------------------------------- */
 
     public Orientation getOrientation(){
         return orientation;
@@ -57,22 +55,6 @@ public abstract class Unit implements Action {
     public void setPosition(Position position) {
         this.position = position;
     }
-
-    /* ---------------------------------------------------------------------------------------- */
-
-    public void action(String command) {
-        switch(command){
-            case "F" :
-                Field.setFillCell(this);
-                break;
-            case "T" : turnClockwise(); break;
-            case "H" : Field.horseStep(this);
-            default:
-                System.out.println("Ошибка");
-        }
-    }
-
-    /* ---------------------------------------------------------------------------------------- */
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package baseobjects;
+package enums;
 
 public enum UnitName {
     TANK, TRACTOR, SOLDIER

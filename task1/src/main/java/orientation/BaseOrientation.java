@@ -1,6 +1,6 @@
 package orientation;
 
-import objects.Unit;
+import gameobjects.Unit;
 
 public abstract class BaseOrientation {
     public abstract void changeOrientation(Unit unit);

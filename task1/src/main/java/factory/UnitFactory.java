@@ -1,10 +1,10 @@
 package factory;
 
-import baseobjects.UnitName;
-import objects.Soldier;
-import objects.Tank;
-import objects.Tractor;
-import objects.Unit;
+import enums.UnitName;
+import gameobjects.Soldier;
+import gameobjects.Tank;
+import gameobjects.Tractor;
+import gameobjects.Unit;
 
 
 public class UnitFactory {

@@ -1,4 +1,4 @@
-package baseobjects;
+package enums;
 
 public enum Orientation {
     NORTH,WEST,SOUTH,EAST

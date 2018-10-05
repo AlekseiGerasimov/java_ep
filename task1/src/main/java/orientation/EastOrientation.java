@@ -1,23 +1,13 @@
 package orientation;
 
-import baseobjects.Field;
-import baseobjects.Orientation;
-import baseobjects.Position;
-import objects.Unit;
+import enums.Orientation;
+import gameobjects.Unit;
 
 public class EastOrientation extends BaseOrientation {
     @Override
     public void changeOrientation(Unit unit) {
         unit.setOrientation(Orientation.SOUTH);
     }
-
-    public void move(Unit unit){
-        int x = unit.getPosition().getX();
-        if(x >= Field.Y){
-            //TODO
-            System.out.println("Исключение");
-        }
-        Position position = unit.getPosition();
-        position.setX(position.getX()+1);
-    }
+    @Override
+    public void move(Unit unit){ unit.getPosition().setX(unit.getPosition().getX()+1); }
 }

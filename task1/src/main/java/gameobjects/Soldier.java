@@ -1,6 +1,4 @@
-package objects;
-
-import baseobjects.Field;
+package gameobjects;
 
 public class Soldier extends Unit {
     private int numberRounds;
@@ -20,10 +18,18 @@ public class Soldier extends Unit {
     @Override
     public void action(String command) {
         switch(command){
-            case "F" : Field.setFillCell(this); break;
-            case "T" : turnClockwise(); break;
-            case "S" : shoot(); break;
-            case "H" : Field.horseStep(this);
+            case "F" :
+                simpleStep.doStep(this);
+                break;
+            case "T" :
+                turnClockwise();
+                break;
+            case "H" :
+                horseStep.doStep(this);
+                break;
+            case "S" :
+                shoot();
+                break;
             default:
                 System.out.println("Ошибка");
         }

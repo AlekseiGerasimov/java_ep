@@ -1,24 +1,22 @@
-import baseobjects.UnitName;
-import composite.Composite;
+import enums.UnitName;
+import composite.CompositeUnit;
 import factory.UnitFactory;
-import objects.Tank;
-import objects.Tractor;
-import objects.Unit;
+import gameobjects.Unit;
 
 public class Main {
     public static void main(String []args){
-        Composite composite = new Composite();
+        CompositeUnit compositeUnit = new CompositeUnit();
         Unit unit1 = UnitFactory.createUnit(UnitName.SOLDIER);
         Unit unit = UnitFactory.createUnit(UnitName.TANK);
         Unit unit2 = UnitFactory.createUnit(UnitName.TRACTOR);
 
-        composite.addUnit(unit);
-        composite.addUnit(unit1);
-        composite.addUnit(unit2);
+        compositeUnit.addUnit(unit);
+        compositeUnit.addUnit(unit1);
+        compositeUnit.addUnit(unit2);
 
-        composite.actionUnit(unit,"F","F","T","O");
-        composite.actionUnit(unit1,"H");
-        composite.actionUnit(unit2,"H");
+        compositeUnit.actionUnit(unit,"F","F","T","O");
+        compositeUnit.actionUnit(unit1,"H");
+        compositeUnit.actionUnit(unit2,"H");
 
 
         System.out.println(unit);

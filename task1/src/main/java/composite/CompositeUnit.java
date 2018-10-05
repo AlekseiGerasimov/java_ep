@@ -1,14 +1,13 @@
 package composite;
 
-import objects.Unit;
+import gameobjects.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Composite {
+public class CompositeUnit {
     private List<Unit> unitList;
-    private int count;
-    public Composite(){
+    public CompositeUnit(){
         unitList = new ArrayList<>();
     }
     public void addUnit(Unit unit){
@@ -21,12 +20,7 @@ public class Composite {
 
     public void actionUnit(Unit unit, String... commands){
         for(String command : commands){
-            count++;
             unit.action(command);
         }
-    }
-
-    public int countActions(){
-        return count;
     }
 }
