@@ -1,7 +1,5 @@
 package gameobjects;
 
-import baseobjects.HorseStep;
-import baseobjects.SimpleStep;
 import enums.Orientation;
 import baseobjects.Position;
 import interfaces.Action;
@@ -13,14 +11,10 @@ import java.util.Map;
 public abstract class Unit implements Action {
     protected Position position;
     protected Orientation orientation;
-    protected SimpleStep simpleStep;
-    protected HorseStep horseStep;
     private Map<Orientation, BaseOrientation> orientationMap;
     public Unit(){
         position = new Position();
         orientation = Orientation.NORTH;
-        simpleStep = new SimpleStep();
-        horseStep = new HorseStep();
         fillMap();
     }
 

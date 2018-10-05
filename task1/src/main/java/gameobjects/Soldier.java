@@ -1,5 +1,8 @@
 package gameobjects;
 
+import baseobjects.HorseStep;
+import baseobjects.SimpleStep;
+
 public class Soldier extends Unit {
     private int numberRounds;
     public Soldier(){
@@ -19,13 +22,13 @@ public class Soldier extends Unit {
     public void action(String command) {
         switch(command){
             case "F" :
-                simpleStep.doStep(this);
+                new SimpleStep().doStep(this);
                 break;
             case "T" :
                 turnClockwise();
                 break;
             case "H" :
-                horseStep.doStep(this);
+                new HorseStep().doStep(this);
                 break;
             case "S" :
                 shoot();

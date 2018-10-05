@@ -6,10 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompositeUnit {
-    private List<Unit> unitList;
-    public CompositeUnit(){
-        unitList = new ArrayList<>();
-    }
+    private List<Unit> unitList = new ArrayList<>();;
+    public CompositeUnit(){ }
     public void addUnit(Unit unit){
        unitList.add(unit);
     }
