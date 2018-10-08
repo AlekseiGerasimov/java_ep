@@ -1,5 +1,8 @@
 package baseobjects;
 
+//TODO Написать обработку некорректных x и y, если необходимо
+//TODO Также во всех классах написать обработчик исключений, если необходимо
+
 public class Position {
     private int x;
     private int y;

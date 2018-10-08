@@ -1,7 +1,6 @@
 package gameobjects;
 
-import gamesteps.HorseStep;
-import gamesteps.SimpleStep;
+import commands.ShootCommand;
 
 public class Soldier extends Unit {
     private int numberRounds;
@@ -19,22 +18,8 @@ public class Soldier extends Unit {
     }
 
     @Override
-    public void action(String command) {
-        switch(command){
-            case "F" :
-                new SimpleStep().doStep(this);
-                break;
-            case "T" :
-                turnClockwise();
-                break;
-            case "H" :
-                new HorseStep().doStep(this);
-                break;
-            case "S" :
-                shoot();
-                break;
-            default:
-                System.out.println("Ошибка");
-        }
+    protected void fillCommandsMap() {
+        super.fillCommandsMap();
+        commandsMap.put("S",new ShootCommand());
     }
 }

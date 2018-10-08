@@ -1,7 +1,6 @@
 package gameobjects;
 
-import gamesteps.HorseStep;
-import gamesteps.SimpleStep;
+import commands.FireCommand;
 
 public class Tank extends Unit {
     public Tank(){
@@ -12,22 +11,8 @@ public class Tank extends Unit {
     }
 
     @Override
-    public void action(String command) {
-        switch(command){
-            case "F" :
-                new SimpleStep().doStep(this);
-                break;
-            case "T" :
-                turnClockwise();
-                break;
-            case "H" :
-                new HorseStep().doStep(this);
-                break;
-            case "O" :
-                fire();
-                break;
-            default:
-                System.out.println("Ошибка");
-        }
+    protected void fillCommandsMap() {
+        super.fillCommandsMap();
+        commandsMap.put("O",new FireCommand());
     }
 }

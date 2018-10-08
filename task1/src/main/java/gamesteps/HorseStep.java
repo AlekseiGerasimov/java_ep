@@ -14,7 +14,6 @@ public class HorseStep implements BaseStep {
         unit.move();
         unit.move();
         unit.turnClockwise();
-        unit.turnClockwise();
         unit.move();
         unit.move();
         int newX = unit.getPosition().getX();

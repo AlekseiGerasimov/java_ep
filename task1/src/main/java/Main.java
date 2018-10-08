@@ -14,14 +14,12 @@ public class Main {
         compositeUnit.addUnit(unit1);
         compositeUnit.addUnit(unit2);
 
-        compositeUnit.actionUnit(unit,"F","F","T","O");
-        compositeUnit.actionUnit(unit1,"H");
-        compositeUnit.actionUnit(unit2,"H");
+        compositeUnit.actionUnit(unit,"H");
+        compositeUnit.actionUnit(unit1,"F","F","F","T","F");
 
 
         System.out.println(unit);
         System.out.println(unit1);
-        System.out.println(unit2);
 
     }
 }
