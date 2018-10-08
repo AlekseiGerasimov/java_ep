@@ -14,8 +14,8 @@ public class Main {
         compositeUnit.addUnit(unit1);
         compositeUnit.addUnit(unit2);
 
-        compositeUnit.actionUnit(unit,"H");
-        compositeUnit.actionUnit(unit1,"F","F","F","T","F");
+        compositeUnit.actionUnit(unit,"H","O");
+        compositeUnit.actionUnit(unit1,"F","F","F","T","F","S");
 
 
         System.out.println(unit);

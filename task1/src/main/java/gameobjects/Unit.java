@@ -59,9 +59,7 @@ public abstract class Unit implements Action {
         orientationMap.get(orientation).changeOrientation(this);
     }
 
-    public void move(){
-        orientationMap.get(orientation).move(this);
-    }
+    public void move(){ orientationMap.get(orientation).move(this); }
 
     public void doStep(Step step){
         stepMap.get(step).doStep(this);
