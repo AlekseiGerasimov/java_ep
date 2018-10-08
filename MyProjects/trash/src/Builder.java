@@ -63,4 +63,6 @@ class Director{
     public Computer build(){
         return builder.build();
     }
+    private int a1;
 }
+
