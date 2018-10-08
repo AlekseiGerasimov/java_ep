@@ -1,6 +1,6 @@
 package factory;
 
-import enums.UnitName;
+import gameobjects.UnitName;
 import gameobjects.Soldier;
 import gameobjects.Tank;
 import gameobjects.Tractor;

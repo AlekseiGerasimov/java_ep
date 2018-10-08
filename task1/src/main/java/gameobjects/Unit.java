@@ -1,8 +1,7 @@
 package gameobjects;
 
-import enums.Orientation;
+import orientation.Orientation;
 import baseobjects.Position;
-import interfaces.Action;
 import orientation.*;
 
 import java.util.HashMap;
@@ -19,7 +18,7 @@ public abstract class Unit implements Action {
     }
 
     private void fillMap(){
-        orientationMap = new HashMap<>(4);
+        orientationMap = new HashMap<>();
         orientationMap.put(Orientation.NORTH,new NorthOrientation());
         orientationMap.put(Orientation.EAST,new EastOrientation());
         orientationMap.put(Orientation.SOUTH,new SouthOrientation());

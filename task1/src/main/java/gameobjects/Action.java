@@ -1,4 +1,4 @@
-package interfaces;
+package gameobjects;
 
 public interface Action {
     void action(String command);

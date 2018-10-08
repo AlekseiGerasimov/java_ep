@@ -2,7 +2,7 @@ package orientation;
 
 import gameobjects.Unit;
 
-public abstract class BaseOrientation {
-    public abstract void changeOrientation(Unit unit);
-    public abstract void move(Unit unit);
+public interface BaseOrientation {
+    void changeOrientation(Unit unit);
+    void move(Unit unit);
 }

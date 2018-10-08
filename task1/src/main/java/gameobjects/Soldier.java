@@ -1,7 +1,7 @@
 package gameobjects;
 
-import baseobjects.HorseStep;
-import baseobjects.SimpleStep;
+import gamesteps.HorseStep;
+import gamesteps.SimpleStep;
 
 public class Soldier extends Unit {
     private int numberRounds;

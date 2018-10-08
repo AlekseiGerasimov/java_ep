@@ -1,4 +1,4 @@
-import enums.UnitName;
+import gameobjects.UnitName;
 import composite.CompositeUnit;
 import factory.UnitFactory;
 import gameobjects.Unit;

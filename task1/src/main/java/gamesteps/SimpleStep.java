@@ -1,20 +1,15 @@
-package baseobjects;
+package gamesteps;
 
-import interfaces.BaseStep;
+import baseobjects.Field;
+import baseobjects.Position;
 import gameobjects.Unit;
 
-public class HorseStep implements BaseStep {
+public class SimpleStep implements BaseStep {
     @Override
     public boolean doStep(Unit unit) {
-        boolean [][]field = Field.getField();
+        boolean field[][] = Field.getField();
         int oldX = unit.getPosition().getX();
         int oldY = unit.getPosition().getY();
-        unit.move();
-        unit.move();
-        unit.move();
-        unit.turnClockwise();
-        unit.turnClockwise();
-        unit.move();
         unit.move();
         int newX = unit.getPosition().getX();
         int newY = unit.getPosition().getY();

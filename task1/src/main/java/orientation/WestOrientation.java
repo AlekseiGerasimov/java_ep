@@ -1,9 +1,8 @@
 package orientation;
 
-import enums.Orientation;
 import gameobjects.Unit;
 
-public class WestOrientation extends BaseOrientation {
+public class WestOrientation implements BaseOrientation {
     @Override
     public void changeOrientation(Unit unit) {
         unit.setOrientation(Orientation.NORTH);
