@@ -1,12 +1,12 @@
 package gamesteps;
 
-import baseobjects.Field;
-import baseobjects.Position;
+import gameobjects.Field;
+import gameobjects.Position;
 import gameobjects.Unit;
 
 public class HorseStep implements BaseStep {
     @Override
-    public boolean doStep(Unit unit) {
+    public void doStep(Unit unit) {
         boolean [][]field = Field.getField();
         int oldX = unit.getPosition().getX();
         int oldY = unit.getPosition().getY();
@@ -18,19 +18,19 @@ public class HorseStep implements BaseStep {
         unit.move();
         int newX = unit.getPosition().getX();
         int newY = unit.getPosition().getY();
-        if(newX > Field.X || newY > Field.Y){
+        if(newX >= Field.getX() || newY >= Field.getY()){
             System.out.println("Вы вышли за границы поля");
-            return false;
+            return;
         }
         else if(field[newX][newY] == true) {
             System.out.println("Поле занято " + newX + " " + newY + " , вы не можете произвести перемещение в данную точку карты");
             unit.setPosition(new Position(oldX,oldY));
-            return false;
+            return;
         }
         else{
             field[oldX][oldY] = false;
             field[newX][newY] = true;
-            return true;
+            return;
         }
     }
 }

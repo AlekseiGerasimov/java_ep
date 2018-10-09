@@ -3,5 +3,5 @@ package gamesteps;
 import gameobjects.Unit;
 
 public interface BaseStep {
-    boolean doStep(Unit unit);
+    void doStep(Unit unit);
 }

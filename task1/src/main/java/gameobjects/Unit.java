@@ -9,13 +9,12 @@ import gamesteps.HorseStep;
 import gamesteps.SimpleStep;
 import gamesteps.Step;
 import orientation.Orientation;
-import baseobjects.Position;
 import orientation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Unit implements Action {
+public abstract class Unit{
     protected Position position;
     protected Orientation orientation;
     protected Map<Step,BaseStep> stepMap;
@@ -65,7 +64,6 @@ public abstract class Unit implements Action {
         stepMap.get(step).doStep(this);
     }
 
-    @Override
     public void action(String command) {
         commandsMap.get(command).doCommand(this);
     }
@@ -90,6 +88,7 @@ public abstract class Unit implements Action {
     public String toString() {
         return position.getX() + " " + position.getY();
     }
+
 }
 
 

@@ -1,7 +1,8 @@
-package baseobjects;
+package gameobjects;
 
-//TODO Написать обработку некорректных x и y, если необходимо
-//TODO Также во всех классах написать обработчик исключений, если необходимо
+//TODO Написать обработку некорректных x и y
+//TODO Также во всех классах написать обработчик исключений
+//TODO спросить про lombok
 
 public class Position {
     private int x;
@@ -35,7 +36,7 @@ public class Position {
 
     @Override
     public String toString() {
-        return "baseobjects.Position{" +
+        return "gameobjects.Position{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';
