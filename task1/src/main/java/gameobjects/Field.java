@@ -1,7 +1,11 @@
 package gameobjects;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class Field {
     private List<Unit> unitList = new ArrayList<>();
@@ -10,13 +14,18 @@ public class Field {
     private static int y;
 
     static {
-        x = 5;
-        y = 5;
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream(new File("src/main/resources/application.properties")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        x = Integer.parseInt(properties.getProperty("X"));
+        y = Integer.parseInt(properties.getProperty("Y"));
         field = new boolean[x][y];
     }
-    public Field(){ }
 
-    public Field(int x,int y){ field = new boolean[x][y]; Field.x = x; Field.y = y;}
+    public Field(){ }
 
     public static int getX() {
         return x;

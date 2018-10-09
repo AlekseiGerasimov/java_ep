@@ -5,7 +5,7 @@ import gameobjects.Unit;
 
 public class Main {
     public static void main(String []args){
-        Field field = new Field(10,10);
+        Field field = new Field();
         Unit unit1 = UnitFactory.createUnit(UnitName.SOLDIER);
         Unit unit = UnitFactory.createUnit(UnitName.TANK);
         Unit unit2 = UnitFactory.createUnit(UnitName.TRACTOR);
