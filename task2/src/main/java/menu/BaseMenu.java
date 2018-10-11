@@ -1,35 +1,27 @@
 package menu;
 
-import objects.BaseObject;
-import objects.CPU;
-import objects.HDD;
-import objects.RAM;
+import helpers.Operation;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
 
 public abstract class BaseMenu {
-    protected Map<String,BaseObject> mapObject;
+    protected Operation operation = new Operation();
 
-    public BaseMenu(){
-        fillMap();
-    }
+    public BaseMenu(){}
 
-    private void fillMap(){
-        mapObject = new HashMap<>();
-        mapObject.put("1",new CPU());
-        mapObject.put("2",new HDD());
-        mapObject.put("3",new RAM());
-    }
-
-    public abstract void show();
+    public abstract void showMenu();
 
     protected boolean checkInputValue(String inputValue,String left,String right){
         if(Pattern.compile("[" + left + "-" + right + "]").matcher(inputValue).matches())
             return true;
-        System.out.println("Введите значения в диапозоне от " + left + " до " + right);
+        System.out.println("Некорректный диапазон значений. Введите значения в диапазоне от " + left + " до " + right);
         return false;
     }
 
@@ -41,7 +33,30 @@ public abstract class BaseMenu {
     }
 
     protected String selectMenu(){
-        System.out.println("Выберите значение: ");
+        System.out.println("Выберите значения (в случае множественного выбор вбить значения через пробел): ");
         return new Scanner(System.in).nextLine();
+    }
+
+    @Getter
+    @Setter
+    protected class TaskRunner extends TimerTask {
+        protected BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
+        protected ExecutorService service = Executors.newCachedThreadPool();
+
+        public TaskRunner(){ }
+
+        public void setSelectMenu(String[] selectMenu) {
+            for(String menuItem : selectMenu)
+                queue.add(new Thread(()->operation.getMapOperation().get(menuItem).writeOnFile()));
+        }
+
+        @Override
+        public void run() {
+            Iterator iterator = queue.iterator();
+            while(iterator.hasNext()){
+                service.submit((Runnable)iterator.next());
+            }
+        }
+
     }
 }

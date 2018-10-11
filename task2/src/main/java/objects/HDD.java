@@ -1,11 +1,24 @@
 package objects;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Date;
 
 public class HDD extends BaseObject {
     public HDD(){
+    }
+
+    @Override
+    public void writeOnFile() {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("files/HDD.txt",true)))
+        {
+            bw.write(String.valueOf(systemMBean.getFreePhysicalMemorySize()) + "---" + new Date() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void readFile() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("files/HDD.txt"));
             while(br.read()!=-1){

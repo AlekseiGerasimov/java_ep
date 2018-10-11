@@ -1,57 +1,54 @@
 package menu;
 
-import helpers.TaskRunner;
-
 import java.util.*;
 
+
 public class DataMenu extends BaseMenu {
-    private static List<String> menu;
     private Timer timer = new Timer();
-
-    public void showMenu() {
-        generatorMenu("Считать CPU","Считать HDD","Считать RAM","Выход в главное меню","Выход из программы");
-        String []menu = selectMenu().split(" ",3);
-        for(String menuItem : menu){
-            if(checkInputValue(menuItem,"1","5") == false)
-                System.exit(-1);
-        }
-        this.menu = Arrays.asList(menu);
-    }
-
-    public void cancel(){
-        System.out.println("Введите любой знак для остановки записи");
-        Scanner scanner =  new Scanner(System.in);
-        String str = scanner.nextLine();
-        timer.cancel();
-    }
-
-    public long getInteval(){
-        System.out.println("Введите интервал с которым необходимо считывать показатели в файл");
-        Scanner scanner = new Scanner(System.in);
-        long interval = scanner.nextLong();
-        return interval;
-    }
+    private TaskRunner taskRunner = new TaskRunner();
+    private List<String> menu = new ArrayList<>();
 
     @Override
-    public void show() {
-        showMenu();
-        if(menu.contains("5")){
-            System.exit(0);
-        }
-        if(menu.contains("4")){
-            new MainMenu().show();
-            return;
-        }
-        runWriter(new TaskRunner());
-        cancel();
+    public void showMenu() {
         show();
+        runWriter(taskRunner);
+        cancel();
+        showMenu();
+    }
+
+    public void show() {
+        generatorMenu("Считать CPU","Считать HDD","Считать RAM","Выход в главное меню","Выход из программы");
+        String []menu = selectMenu().split(" ");
+        for(String menuItem : menu){
+            if(checkInputValue(menuItem,"1","5") == false){
+                System.out.println("Введен некорретный диапазон значений");
+                System.exit(-1);
+            }
+            if(menuItem.equals("5")){
+                System.exit(0);
+            }
+            if(menuItem.equals("4")){
+                new MainMenu().showMenu();
+                return;
+            }
+        }
+        this.menu = Arrays.asList(menu);
+        taskRunner.setSelectMenu(menu);
     }
 
     public void runWriter(TimerTask taskRunner){
-        timer.schedule(taskRunner,0,getInteval());
+        timer.schedule(taskRunner,0,getInterval());
     }
 
-    public static List<String> getMenu() {
-        return menu;
+    public void cancel(){
+        System.out.println("Нажмите клавишу ввода (Enter) для остановки записи в файл");
+        new Scanner(System.in).nextLine();
+        taskRunner.getService().shutdown();
+        timer.cancel();
+    }
+
+    public long getInterval(){
+        System.out.println("Введите интервал с которым необходимо считывать показатели в файл");
+        return new Scanner(System.in).nextLong();
     }
 }

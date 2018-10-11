@@ -1,11 +1,24 @@
 package objects;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Date;
 
 public class RAM extends BaseObject {
     public RAM(){
+    }
+
+    @Override
+    public void writeOnFile() {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("files/RAM.txt",true)))
+        {
+            bw.write(String.valueOf(systemMBean.getCommittedVirtualMemorySize()) + "---" + new Date() + "\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void readFile() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("files/RAM.txt"));
             while(br.read()!=-1){

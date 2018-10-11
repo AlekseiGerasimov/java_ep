@@ -1,35 +1,36 @@
 package helpers;
 
-import operations.BaseOperation;
-import operations.CPUOperation;
-import operations.HDDOperation;
-import operations.RAMOperation;
+import lombok.Getter;
+import lombok.Setter;
+import objects.BaseObject;
+import objects.CPU;
+import objects.HDD;
+import objects.RAM;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Getter
+@Setter
 public class Operation {
-    protected Map<String,BaseOperation> mapOperation;
+    protected Map<String, BaseObject> mapOperation;
     public Operation(){
-        mapOperation = new HashMap<>();
-        mapOperation.put("1",new CPUOperation());
-        mapOperation.put("2",new HDDOperation());
-        mapOperation.put("3",new RAMOperation());
+        mapOperation = fillMapOperation();
     }
 
-    public void addOperation(String numberOperation,BaseOperation operation){
-        mapOperation.put(numberOperation,operation);
+    private Map<String,BaseObject> fillMapOperation(){
+        Map<String,BaseObject> operations = new HashMap<>();
+        operations.put("1",new CPU());
+        operations.put("2",new HDD());
+        operations.put("3",new RAM());
+        return operations;
+    }
+    public void addOperation(String numberOperation,BaseObject object) {
+        mapOperation.put(numberOperation, object);
     }
 
     public void removeOperation(String number){
         mapOperation.remove(number);
     }
 
-    public Map<String, BaseOperation> getMapOperation() {
-        return mapOperation;
-    }
-
-    public void setMapOperation(Map<String, BaseOperation> mapOperation) {
-        this.mapOperation = mapOperation;
-    }
 }
