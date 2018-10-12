@@ -4,7 +4,7 @@ public class MainMenu extends BaseMenu {
 
     public MainMenu(){
     }
-    
+
     @Override
     public void showMenu() {
         generatorMenu("Сформировать показатели","Показать отчеты","Выход");

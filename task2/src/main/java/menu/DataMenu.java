@@ -13,7 +13,7 @@ public class DataMenu extends BaseMenu {
         show();
         runWriter(taskRunner);
         cancel();
-        showMenu();
+        new MainMenu().showMenu();
     }
 
     public void show() {
