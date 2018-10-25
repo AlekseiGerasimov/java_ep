@@ -1,6 +1,7 @@
 package Objects;
 
 import javax.persistence.*;
+import java.beans.Transient;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,9 @@ public class Position {
             joinColumns=@JoinColumn (name="id_position"),
             inverseJoinColumns=@JoinColumn(name="id_work"))
     private List<Worker> workers;
+
+    @Transient
+    private int test;
 
     public List<Worker> getWorkers() {
         return workers;
@@ -48,4 +52,6 @@ public class Position {
     public void setName_pos(String name_pos) {
         this.name_pos = name_pos;
     }
+
+
 }
