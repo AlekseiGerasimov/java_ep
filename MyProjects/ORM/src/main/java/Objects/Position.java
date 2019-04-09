@@ -18,6 +18,7 @@ public class Position {
             inverseJoinColumns=@JoinColumn(name="id_work"))
     private List<Worker> workers;
 
+    private int y;
     public List<Worker> getWorkers() {
         return workers;
     }
